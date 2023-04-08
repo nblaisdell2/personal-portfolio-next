@@ -3,10 +3,11 @@ import Image from "next/image";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Link from "next/link";
+import { urlFor } from "../../sanity";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 
-function Hero({}: Props) {
+function Hero({ pageInfo }: Props) {
   // TODO: Figure out how I can pull these phrases from somewhere else and load them here
   const [text, count] = useTypewriter({
     words: ["Hi, I'm Nick!", "Software Engineer", "Passionate about Software"],
@@ -21,9 +22,10 @@ function Hero({}: Props) {
       {/* TODO: Get an _actual_ picture of myself to put here */}
       <Image
         alt="Picture of Me"
-        src={
-          "https://w7.pngwing.com/pngs/115/800/png-transparent-drum-set-illustration-rock-band-4-the-beatles-rock-band-computer-icons-musical-ensemble-drum-stick-drum-area-music-festival.png"
-        }
+        src="https://w7.pngwing.com/pngs/115/800/png-transparent-drum-set-illustration-rock-band-4-the-beatles-rock-band-computer-icons-musical-ensemble-drum-stick-drum-area-music-festival.png"
+        // src={
+        //   urlFor(pageInfo?.heroImage)
+        // }
         width={300}
         height={300}
         className="relative rounded-full h-48 w-48 mx-auto object-cover"
@@ -32,7 +34,7 @@ function Hero({}: Props) {
       <div className="z-20">
         {/* Title */}
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          Software Engineer
+          {pageInfo?.role}
         </h2>
 
         {/* Typewriter Phrases */}

@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { urlFor } from "../../sanity";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -23,6 +24,7 @@ function About({}: Props) {
         whileInView={{ x: 0, opacity: 1 }}
         // viewport={{ once: true }}
         src="https://w7.pngwing.com/pngs/115/800/png-transparent-drum-set-illustration-rock-band-4-the-beatles-rock-band-computer-icons-musical-ensemble-drum-stick-drum-area-music-festival.png"
+        // src={urlFor(pageInfo?.profilePic)}
       />
 
       <div className="space-y-10 px-0 md:px-10">
@@ -32,20 +34,7 @@ function About({}: Props) {
           background
         </h4>
         {/* TODO: Input a _real_ background about myself */}
-        <p className="text-base">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          molestie nec nunc ut scelerisque. Etiam ac felis vitae lorem posuere
-          maximus. Aliquam interdum eget tortor sed scelerisque. Donec nulla
-          lorem, elementum eu erat interdum, condimentum faucibus felis. Integer
-          in ante nibh. Donec ut volutpat ex. Quisque ex quam, finibus at justo
-          eget, porttitor volutpat arcu. Donec pulvinar sapien non blandit
-          ullamcorper. Donec ipsum ante, pretium consectetur luctus at, congue
-          commodo nibh. Cras et volutpat nulla. Phasellus auctor leo nibh, nec
-          eleifend sapien imperdiet consectetur. Curabitur condimentum urna vel
-          facilisis rhoncus. Pellentesque habitant morbi tristique senectus et
-          netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit.
-        </p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );
