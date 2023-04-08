@@ -9,9 +9,9 @@ type Inputs = {
   message: string;
 };
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 
-function ContactMe({}: Props) {
+function ContactMe({ pageInfo }: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     window.location.href = `mailto:${formData.email}?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
@@ -34,15 +34,15 @@ function ContactMe({}: Props) {
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#186bd7] h-7 w-7 animate-pulse" />
-            <p>+1 (413) 813-4724</p>
+            <p>{pageInfo?.phoneNumber}</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[#186bd7] h-7 w-7 animate-pulse" />
-            <p>nblaisdell2@gmail.com</p>
+            <p>{pageInfo?.email}</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-[#186bd7] h-7 w-7 animate-pulse" />
-            <p>Palmer, Massachusetts</p>
+            <p>{pageInfo?.address}</p>
           </div>
         </div>
 

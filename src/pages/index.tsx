@@ -73,7 +73,7 @@ export default function Home({
       </section>
 
       <section id="contact" className="snap-start">
-        <ContactMe />
+        <ContactMe pageInfo={pageInfo} />
       </section>
 
       {/* Footer ("Go Back" button) */}
