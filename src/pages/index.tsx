@@ -8,13 +8,30 @@ import WorkExperience from "@/components/WorkExperience";
 import Link from "next/link";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
 import { GetStaticProps } from "next";
-import {
-  fetchExperiences,
-  fetchPageInfo,
-  fetchProjects,
-  fetchSkills,
-  fetchSocials,
-} from "../../utils/fetchSanityData";
+import { groq } from "next-sanity";
+import { sanityClient } from "../../sanity";
+
+const GET_PAGE_INFO = groq`
+  *[_type == "pageInfo"][0]
+`;
+const GET_SOCIALS = groq`
+  *[_type == "social"]
+`;
+const GET_PROJECTS = groq`
+  *[_type == "project"] {
+    ...,
+    technologies[]->
+  }
+`;
+const GET_SKILLS = groq`
+  *[_type == "skill"]
+`;
+const GET_EXPERIENCES = groq`
+  *[_type == "experience"] {
+    ...,
+    technologies[]->
+  }
+`;
 
 type Props = {
   pageInfo: PageInfo;
@@ -72,11 +89,11 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperiences();
-  const projects: Project[] = await fetchProjects();
-  const skills: Skill[] = await fetchSkills();
-  const socials: Social[] = await fetchSocials();
+  const pageInfo: PageInfo = await sanityClient.fetch(GET_PAGE_INFO);
+  const experiences: Experience[] = await sanityClient.fetch(GET_EXPERIENCES);
+  const projects: Project[] = await sanityClient.fetch(GET_PROJECTS);
+  const skills: Skill[] = await sanityClient.fetch(GET_SKILLS);
+  const socials: Social[] = await sanityClient.fetch(GET_SOCIALS);
 
   return {
     props: {

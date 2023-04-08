@@ -19,7 +19,7 @@ function Skills({ skills }: Props) {
       </h3>
 
       <div className="grid grid-cols-4 gap-5">
-        {skills.map((skill, i) => {
+        {skills?.map((skill, i) => {
           return (
             <Skill
               key={skill._id}

@@ -1,8 +1,6 @@
-import axios from "axios";
-
 const fetchSanityData = async <T>(url: string, prop: string) => {
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/${url}`);
-  const data = await res.data;
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/${url}`);
+  const data = await res.json();
 
   const ret: T = data[prop];
 
