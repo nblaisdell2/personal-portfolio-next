@@ -27,8 +27,9 @@ function Projects({ projects }: Props) {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2 }}
-                src="https://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png"
-                // src={urlFor(project?.projectImage)}
+                // src="https://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png"
+                src={urlFor(project?.projectImage)}
+                className="h-32 w-32 rounded-full"
                 alt=""
               />
 
