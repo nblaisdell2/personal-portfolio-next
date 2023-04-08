@@ -40,7 +40,7 @@ function Hero({ pageInfo }: Props) {
         {/* Typewriter Phrases */}
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
           <span className="">{text}</span>
-          <Cursor cursorColor="#F7AB0A"></Cursor>
+          <Cursor cursorColor="#186bd7"></Cursor>
         </h1>
 
         {/* Links */}
