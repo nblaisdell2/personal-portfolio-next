@@ -23,8 +23,8 @@ function About({ pageInfo }: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ x: 0, opacity: 1 }}
         // viewport={{ once: true }}
-        src="https://w7.pngwing.com/pngs/115/800/png-transparent-drum-set-illustration-rock-band-4-the-beatles-rock-band-computer-icons-musical-ensemble-drum-stick-drum-area-music-festival.png"
-        // src={urlFor(pageInfo?.profilePic)}
+        // src="https://w7.pngwing.com/pngs/115/800/png-transparent-drum-set-illustration-rock-band-4-the-beatles-rock-band-computer-icons-musical-ensemble-drum-stick-drum-area-music-festival.png"
+        src={urlFor(pageInfo?.profilePic)}
       />
 
       <div className="space-y-10 px-0 md:px-10">

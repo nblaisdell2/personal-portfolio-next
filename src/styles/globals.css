@@ -8,7 +8,7 @@
     }
 
     .sectionTitle {
-        @apply absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl
+        @apply absolute top-24 uppercase tracking-[16px] text-gray-500 text-2xl
     }
 
     .contactInput {

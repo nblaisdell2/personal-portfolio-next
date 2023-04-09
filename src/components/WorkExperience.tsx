@@ -14,10 +14,16 @@ function WorkExperience({ experiences }: Props) {
     >
       <h3 className="sectionTitle">Experience</h3>
 
-      <div className="w-full flex space-x-5 overflow-x-scroll scrollbar-custom p-10 snap-x snap-mandatory">
-        {experiences?.map((exp) => {
-          return <ExperienceCard key={exp._id} experience={exp} />;
-        })}
+      <div className="relative h-full w-full flex space-x-5 overflow-x-scroll scrollbar-custom p-6 snap-x snap-mandatory">
+        {experiences
+          ?.sort(
+            (a, b) =>
+              new Date(b.dateStarted).getTime() -
+              new Date(a.dateStarted).getTime()
+          )
+          .map((exp) => {
+            return <ExperienceCard key={exp._id} experience={exp} />;
+          })}
       </div>
     </motion.div>
   );

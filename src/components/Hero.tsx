@@ -10,7 +10,11 @@ type Props = { pageInfo: PageInfo };
 function Hero({ pageInfo }: Props) {
   // TODO: Figure out how I can pull these phrases from somewhere else and load them here
   const [text, count] = useTypewriter({
-    words: ["Hi, I'm Nick!", "Software Engineer", "Passionate about Software"],
+    words: [
+      "Hi, I'm Nick!",
+      "Passionate about Software",
+      "What can I automate for you?",
+    ],
     loop: true,
     delaySpeed: 2000,
   });
@@ -22,13 +26,11 @@ function Hero({ pageInfo }: Props) {
       {/* TODO: Get an _actual_ picture of myself to put here */}
       <Image
         alt="Picture of Me"
-        src="https://w7.pngwing.com/pngs/115/800/png-transparent-drum-set-illustration-rock-band-4-the-beatles-rock-band-computer-icons-musical-ensemble-drum-stick-drum-area-music-festival.png"
-        // src={
-        //   urlFor(pageInfo?.heroImage)
-        // }
+        // src="https://w7.pngwing.com/pngs/115/800/png-transparent-drum-set-illustration-rock-band-4-the-beatles-rock-band-computer-icons-musical-ensemble-drum-stick-drum-area-music-festival.png"
+        src={urlFor(pageInfo?.heroImage)}
         width={300}
         height={300}
-        className="relative rounded-full h-48 w-48 mx-auto object-cover"
+        className="relative rounded-full h-64 w-64 mx-auto object-cover"
       />
 
       <div className="z-20">

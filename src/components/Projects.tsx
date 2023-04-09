@@ -27,9 +27,8 @@ function Projects({ projects }: Props) {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2 }}
-                // src="https://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png"
                 src={urlFor(project?.projectImage)}
-                className="h-32 w-32 rounded-full"
+                className="h-80 w-[750px] rounded-md object-cover"
                 alt=""
               />
 
@@ -41,22 +40,24 @@ function Projects({ projects }: Props) {
                   {project?.title}
                 </h4>
 
-                {project?.technologies.map((tech) => {
-                  return (
-                    <div
-                      key={tech._id}
-                      className="flex items-center space-x-2 justify-center"
-                    >
-                      <Image
-                        height={500}
-                        width={500}
-                        src={urlFor(tech.skillImage)}
-                        className="h-5 w-5"
-                        alt=""
-                      ></Image>
-                    </div>
-                  );
-                })}
+                <div className="flex space-x-2">
+                  {project?.technologies?.map((tech) => {
+                    return (
+                      <div
+                        key={tech._id}
+                        className="flex w-fit space-x-2 justify-center"
+                      >
+                        <Image
+                          height={500}
+                          width={500}
+                          src={urlFor(tech.skillImage)}
+                          className="h-8 w-8"
+                          alt=""
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
 
                 <p className="text-lg text-center md:text-left">
                   {project?.summary}

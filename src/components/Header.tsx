@@ -28,13 +28,14 @@ function Header({ socials }: Props) {
           <SocialIcon
             key={social._id}
             url={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
             fgColor="gray"
             bgColor="transparent"
           />
         ))}
       </motion.div>
 
-      {/* <Link href="#contact"> */}
       <motion.div
         initial={{
           x: 500,
@@ -54,14 +55,16 @@ function Header({ socials }: Props) {
         <SocialIcon
           className="cursor-pointer"
           network="email"
+          url={"#contact"}
           fgColor="gray"
           bgColor="transparent"
         />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Get in Touch!
-        </p>
+        <Link href="#contact">
+          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+            Get in Touch!
+          </p>
+        </Link>
       </motion.div>
-      {/* </Link> */}
     </header>
   );
 }
