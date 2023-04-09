@@ -26,5 +26,10 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'sortOrder',
+      title: 'SortOrder',
+      type: 'number',
+    }),
   ],
 })

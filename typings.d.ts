@@ -25,6 +25,12 @@ type PageInfo = SanityBody & {
   profilePic: Image;
 };
 
+type Phrase = SanityBody & {
+  _type: "phrase";
+  phrase: string;
+  sortOrder: number;
+};
+
 type Social = SanityBody & {
   _type: "social";
   title: string;
@@ -43,6 +49,7 @@ type Skill = SanityBody & {
   skillImage: Image;
   progress: number;
   title: string;
+  sortOrder: number;
 };
 
 type Project = SanityBody & {
@@ -52,6 +59,7 @@ type Project = SanityBody & {
   linkToBuild: string;
   summary: string;
   technologies: Technology[];
+  sortOrder: number;
 };
 
 type Experience = SanityBody & {

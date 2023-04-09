@@ -12,7 +12,6 @@ export const config = {
 export const sanityClient = createClient(config);
 
 export const urlFor = (source: any) => {
-  console.log("source", source);
   if (source == undefined)
     return "https://w7.pngwing.com/pngs/115/800/png-transparent-drum-set-illustration-rock-band-4-the-beatles-rock-band-computer-icons-musical-ensemble-drum-stick-drum-area-music-festival.png";
   return createImageUrlBuilder(config).image(source).url();

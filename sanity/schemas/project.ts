@@ -34,5 +34,10 @@ export default defineType({
       title: 'LinkToBuild',
       type: 'url',
     }),
+    defineField({
+      name: 'sortOrder',
+      title: 'SortOrder',
+      type: 'number',
+    }),
   ],
 })

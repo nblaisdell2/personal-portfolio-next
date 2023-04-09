@@ -32,6 +32,9 @@ const GET_EXPERIENCES = groq`
     technologies[]->
   }
 `;
+const GET_PHRASES = groq`
+  *[_type == "phrase"]
+`;
 
 type Props = {
   pageInfo: PageInfo;
@@ -39,6 +42,7 @@ type Props = {
   skills: Skill[];
   projects: Project[];
   socials: Social[];
+  phrases: Phrase[];
 };
 
 export default function Home({
@@ -47,13 +51,16 @@ export default function Home({
   skills,
   projects,
   socials,
+  phrases,
 }: Props) {
+  console.log("phrases", phrases);
+
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scrollbar-custom z-0">
       <Header socials={socials} />
 
       <section id="hero" className="snap-start">
-        <Hero pageInfo={pageInfo} />
+        <Hero pageInfo={pageInfo} phrases={phrases} />
       </section>
 
       <section id="about" className="snap-center">
@@ -94,6 +101,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const projects: Project[] = await sanityClient.fetch(GET_PROJECTS);
   const skills: Skill[] = await sanityClient.fetch(GET_SKILLS);
   const socials: Social[] = await sanityClient.fetch(GET_SOCIALS);
+  const phrases: Phrase[] = await sanityClient.fetch(GET_PHRASES);
 
   return {
     props: {
@@ -102,6 +110,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       skills,
       socials,
+      phrases,
     },
     revalidate: 10,
   };

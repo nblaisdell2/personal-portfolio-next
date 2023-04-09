@@ -19,15 +19,17 @@ function Skills({ skills }: Props) {
       </h3>
 
       <div className="grid grid-cols-4 gap-5">
-        {skills?.map((skill, i) => {
-          return (
-            <Skill
-              key={skill._id}
-              skill={skill}
-              fromLeft={i < skills.length / 2}
-            />
-          );
-        })}
+        {skills
+          ?.sort((a, b) => a.sortOrder - b.sortOrder)
+          .map((skill, i) => {
+            return (
+              <Skill
+                key={skill._id}
+                skill={skill}
+                fromLeft={i < skills.length / 2}
+              />
+            );
+          })}
       </div>
     </motion.div>
   );
