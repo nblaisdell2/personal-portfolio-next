@@ -28,23 +28,23 @@ function Hero({ pageInfo, phrases }: Props) {
         src={urlFor(pageInfo?.heroImage)}
         width={300}
         height={300}
-        className="relative rounded-full h-64 w-64 mx-auto object-cover"
+        className="relative rounded-full h-56 w-56 sm:h-64 sm:w-64 mx-auto object-cover"
       />
 
-      <div className="z-20">
+      <div className="z-20 flex flex-col items-center">
         {/* Title */}
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
           {pageInfo?.role}
         </h2>
 
         {/* Typewriter Phrases */}
-        <h1 className="text-5xl lg:text-6xl font-semibold px-10">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold px-10 h-32 sm:h-auto">
           <span className="">{text}</span>
           <Cursor cursorColor="#186bd7"></Cursor>
         </h1>
 
         {/* Links */}
-        <div className="pt-5">
+        <div className="pt-0 sm:pt-5 grid grid-cols-2 max-w-fit">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>

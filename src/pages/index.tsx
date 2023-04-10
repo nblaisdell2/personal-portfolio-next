@@ -53,8 +53,6 @@ export default function Home({
   socials,
   phrases,
 }: Props) {
-  console.log("phrases", phrases);
-
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scrollbar-custom z-0">
       <Header socials={socials} />

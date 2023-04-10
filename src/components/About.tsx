@@ -15,25 +15,22 @@ function About({ pageInfo }: Props) {
       <h3 className="sectionTitle">About</h3>
 
       <motion.img
-        className="rounded-full mt-16 -mb-16 md:mb-0 flex-shrink-0 w-48 h-48 object-cover md:w-64 md:h-64"
+        className="rounded-full mt-16 -mb-32 sm:-mb-16 md:mb-0 flex-shrink-0 object-cover w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64"
         initial={{
           x: -200,
           opacity: 0,
         }}
         transition={{ duration: 1.2 }}
         whileInView={{ x: 0, opacity: 1 }}
-        // viewport={{ once: true }}
-        // src="https://w7.pngwing.com/pngs/115/800/png-transparent-drum-set-illustration-rock-band-4-the-beatles-rock-band-computer-icons-musical-ensemble-drum-stick-drum-area-music-festival.png"
         src={urlFor(pageInfo?.profilePic)}
       />
 
-      <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">
+      <div className="mt-14 sm:mt-0 space-y-6 sm:space-y-10 px-0 md:px-10">
+        <h4 className="text-3xl sm:text-4xl font-semibold">
           Here is a{" "}
           <span className="underline decoration-[#186bd7]/50">little</span>{" "}
           background
         </h4>
-        {/* TODO: Input a _real_ background about myself */}
         <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
