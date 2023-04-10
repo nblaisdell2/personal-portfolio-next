@@ -15,7 +15,7 @@ function Projects({ projects }: Props) {
     >
       <h3 className="sectionTitle">Projects</h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden scrollbar-custom snap-x snap-mandatory z-20">
+      <div className="relative w-full overflow-x-scroll overflow-y-hidden scrollbar-custom snap-x snap-mandatory z-20">
         {projects?.map((project, i) => {
           return (
             <div
@@ -28,24 +28,24 @@ function Projects({ projects }: Props) {
                 viewport={{ once: true }}
                 transition={{ duration: 1.2 }}
                 src={urlFor(project?.projectImage)}
-                className="h-80 w-[750px] rounded-md object-cover"
+                className="h-60 w-screen rounded-md object-cover"
                 alt=""
               />
 
-              <div className="space-y-6 px-0 md:px-10 max-w-6xl">
-                <h4 className="text-4xl font-semibold text-center">
+              <div className="space-y-6 px-4 md:px-10 w-screen sm:max-w-6xl">
+                <h4 className="text-2xl sm:text-4xl font-semibold text-center">
                   <span className="underline decoration-[#186bd7]/50">
                     Case Study {i + 1} of {projects.length}:
                   </span>{" "}
                   {project?.title}
                 </h4>
 
-                <div className="flex space-x-2 justify-center">
+                <div className="flex space-x-2 justify-center w-full">
                   {project?.technologies?.map((tech) => {
                     return (
                       <div
                         key={tech._id}
-                        className="flex w-fit space-x-2 justify-center"
+                        className="flex space-x-2 justify-center"
                       >
                         <Image
                           height={500}
@@ -59,7 +59,7 @@ function Projects({ projects }: Props) {
                   })}
                 </div>
 
-                <p className="text-lg text-center md:text-left">
+                <p className="text-sm sm:text-lg text-center md:text-left">
                   {project?.summary}
                 </p>
               </div>
