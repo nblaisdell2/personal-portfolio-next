@@ -44,7 +44,7 @@ function Hero({ pageInfo, phrases }: Props) {
         </h1>
 
         {/* Links */}
-        <div className="pt-0 sm:pt-5 grid grid-cols-2 max-w-fit">
+        <div className="pt-0 sm:pt-5 sm:block grid grid-cols-2 max-w-fit">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>
