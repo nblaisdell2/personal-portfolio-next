@@ -21,7 +21,7 @@ function ContactMe({ pageInfo }: Props) {
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
       <h3 className="sectionTitle">Contact</h3>
 
-      <div className="flex flex-col space-y-10 mt-28 items-center">
+      <div className="flex flex-col sm:space-y-10 space-y-4 mt-40 items-center">
         {/* Text */}
         <h4 className="text-2xl sm:text-4xl font-semibold text-center px-2 w-screen">
           I have got just what you need.{" "}
@@ -49,7 +49,7 @@ function ContactMe({ pageInfo }: Props) {
         {/* Input form */}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto px-2 pb-10 border border-blue-500"
+          className="flex flex-col space-y-2 w-fit mx-auto px-2 sm:pb-0 pb-20 border border-blue-500"
         >
           <div className="flex flex-col justify-center items-center sm:flex-row space-x-0 sm:space-x-2 space-y-2 sm:space-y-0">
             <input
