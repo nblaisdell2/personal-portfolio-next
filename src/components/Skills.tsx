@@ -18,7 +18,7 @@ function Skills({ skills }: Props) {
         Hover over a skill for current proficiency
       </h3>
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="absolute top-52 grid grid-cols-4 gap-5">
         {skills
           ?.sort((a, b) => a.sortOrder - b.sortOrder)
           .map((skill, i) => {
