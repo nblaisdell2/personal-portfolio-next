@@ -49,7 +49,7 @@ function ContactMe({ pageInfo }: Props) {
         {/* Input form */}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto px-2 border border-blue-500"
+          className="flex flex-col space-y-2 w-fit mx-auto px-2 pb-10 border border-blue-500"
         >
           <div className="flex flex-col justify-center items-center sm:flex-row space-x-0 sm:space-x-2 space-y-2 sm:space-y-0">
             <input

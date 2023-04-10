@@ -82,13 +82,13 @@ export default function Home({
       </section>
 
       {/* Footer ("Go Back" button) */}
-      <Link href="#hero">
+      {/* <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center filter cursor-pointer group">
             <ChevronUpIcon className="h-10 w-10 border border-[#186bd7] group-hover:bg-[#186bd7] transition-all duration-200 rounded-full" />
           </div>
         </footer>
-      </Link>
+      </Link> */}
     </div>
   );
 }
