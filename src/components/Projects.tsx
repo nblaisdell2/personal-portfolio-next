@@ -28,7 +28,7 @@ function Projects({ projects }: Props) {
                 viewport={{ once: true }}
                 transition={{ duration: 1.2 }}
                 src={urlFor(project?.projectImage)}
-                className="h-60 w-screen rounded-md object-cover"
+                className="h-60 sm:h-80 sm:w-[750px] w-screen rounded-md object-cover"
                 alt=""
               />
 
