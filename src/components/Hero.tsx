@@ -20,7 +20,7 @@ function Hero({ pageInfo, phrases }: Props) {
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+    <div className="h-screen flex flex-col items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
 
       <Image
@@ -28,7 +28,7 @@ function Hero({ pageInfo, phrases }: Props) {
         src={urlFor(pageInfo?.heroImage)}
         width={300}
         height={300}
-        className="relative rounded-full h-56 w-56 sm:h-64 sm:w-64 mx-auto object-cover"
+        className="-mt-10 rounded-full h-56 w-56 sm:h-64 sm:w-64 mx-auto object-cover z-20"
       />
 
       <div className="z-20 flex flex-col items-center">

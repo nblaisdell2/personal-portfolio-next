@@ -15,7 +15,7 @@ function About({ pageInfo }: Props) {
       <h3 className="sectionTitle">About</h3>
 
       <motion.img
-        className="rounded-full mt-16 -mb-32 sm:-mb-16 md:mb-0 flex-shrink-0 object-cover w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64"
+        className="rounded-full mt-28 sm:-mt-16 -mb-32 sm:-mb-16 md:mb-0 flex-shrink-0 object-cover w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64"
         initial={{
           x: -200,
           opacity: 0,
@@ -25,13 +25,15 @@ function About({ pageInfo }: Props) {
         src={urlFor(pageInfo?.profilePic)}
       />
 
-      <div className="mt-14 sm:mt-0 space-y-6 sm:space-y-10 px-0 md:px-10">
-        <h4 className="text-3xl sm:text-4xl font-semibold">
+      <div className="mb-16 mt-32 sm:mb-24 sm:mt-0 space-y-6 sm:space-y-10 px-0 md:px-10">
+        <h4 className="text-2xl sm:text-4xl font-semibold">
           Here is a{" "}
           <span className="underline decoration-[#186bd7]/50">little</span>{" "}
           background
         </h4>
-        <p className="text-base">{pageInfo?.backgroundInformation}</p>
+        <p className="text-sm sm:text-base">
+          {pageInfo?.backgroundInformation}
+        </p>
       </div>
     </motion.div>
   );
